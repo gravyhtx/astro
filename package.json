@@ -1,0 +1,51 @@
+{
+  "name": "next-app_template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@justinribeiro/code-block": "^1.0.0",
+    "@reduxjs/toolkit": "^1.8.5",
+    "@sendgrid/mail": "^7.6.2",
+    "@types/google.maps": "^3.50.4",
+    "axios": "^1.0.0",
+    "bcrypt": "^5.0.1",
+    "color": "^4.2.0",
+    "crypto-browserify": "^3.12.0",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "gray-matter": "^4.0.3",
+    "install": "^0.13.0",
+    "isomorphic-fetch": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "lit": "^2.4.0",
+    "next": "12.2.5",
+    "nookies": "^2.5.2",
+    "npm": "^8.19.2",
+    "prismjs": "^1.29.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-glider": "^4.0.2",
+    "react-redux": "^8.0.4",
+    "sitemap": "^7.1.1",
+    "sweph": "^2.10.3-1",
+    "swr": "^1.3.0",
+    "typescript": "^4.8.4",
+    "underscore.string": "^3.3.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "@types/googlemaps": "^3.43.3",
+    "@types/node": "^18.11.0",
+    "@types/react": "^18.0.21",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.2.5"
+  }
+}
