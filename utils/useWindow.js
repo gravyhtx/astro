@@ -66,26 +66,26 @@ export const screenHeight = (window) => {
 
 // HANDLE SCROLL EVENTS //
 
-// export const getScrollPosition = () => {
+export const getScrollPosition = () => {
 
-//   const [scrollY, setScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrollY(window.scrollY);
-//     };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
     
-//     handleScroll();
+    handleScroll();
 
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
 
-//   }, []);
+  }, []);
 
-//   return scrollY;
-// }
+  return scrollY;
+}
 
 
 export const handleScrollClasses = ( el, classes, position ) => {
