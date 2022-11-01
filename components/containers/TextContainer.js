@@ -1,12 +1,14 @@
 const TextContainer = ({ containerClasses, containerId, header, headerClasses, headerId, children, textId, textClasses, contain, border, margin, fnClick, fnChange, fnBlur }) => {
-  let cClass = containerClasses ? " "+containerClasses : "";
-  let cId = containerId || "";
-  let hId = headerId || "";
-  let tId = textId || "";
-  let hClass = headerClasses ? " "+headerClasses  : "";
-  let tClass= textClasses ? " "+textClasses: "";
-  let borders = border ? " borders" : "";
-  let container = contain ? " contain" : "";
+  const cClass = containerClasses ? " "+containerClasses : "";
+  const cId = containerId || "";
+  const hId = headerId || "";
+  const tId = textId || "";
+  const hClass = headerClasses ? " "+headerClasses  : "";
+  const tClass= textClasses ? " "+textClasses: "";
+  const borders = border ? " borders" : "";
+
+  const margins = margin === false ? "text-container no-margin" : "text-container"
+  const container = contain ? " contain" : "";
 
   const handleClick = () =>  fnClick();
 
@@ -15,7 +17,7 @@ const TextContainer = ({ containerClasses, containerId, header, headerClasses, h
   const handleBlur = () => fnBlur();
 
   return (
-    <div className={margin === false ? "text-container no-margin" : "text-container"}>
+    <div className={margins + container}>
       <div
         onClick={fnClick?handleClick:null}
         onChange={fnChange?handleChange:null}
