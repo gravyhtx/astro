@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
+
 // import TopNav from '../components/TopNav';
 // import Header from '../components/Header';
 // import Footer from '../components/Footer';
-import BackToTop from '../components/dynamic/BackToTop';
 
-import ScrollToPosition from '../components/ScrollToPosition';
+import { ScrollToPosition, BackToTop } from '../modules/scrollSystem';
 
 import website from '../config/site-data.json';
 import { metaTags } from '../config/theme';
@@ -41,7 +41,6 @@ export default function DefaultLayout({ title, children, layoutClasses, containe
         <div className={ "main-content"+containerClasses } id="content">
           { withAuth && authCheck() || !withAuth ? children : <></> }
         </div>
-        { backToTop === true ? <BackToTop /> : <></> }
       {/* <Footer /> */}
     </div>
   )

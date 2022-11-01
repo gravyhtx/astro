@@ -8,6 +8,7 @@
   font-family: 'Crimson Pro', serif;
   font-family: 'Lora', serif;
   font-family: 'Be Vietnam', sans-serif;
+  font-family: 'Lexend', sans-serif;
   font-family: 'Mukta', sans-serif;
   font-family: 'Noto Sans', sans-serif;
   font-family: 'Poppins', sans-serif;
@@ -20,10 +21,9 @@
   font-family: 'Roboto Slab', serif;
   font-family: 'Share Tech Mono', monospace;
   font-family: 'Urbanist', sans-serif;
-
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Serif:ital,opsz,wght@0,8..144,100;0,8..144,200;0,8..144,300;0,8..144,400;0,8..144,500;0,8..144,600;0,8..144,700;0,8..144,800;0,8..144,900;1,8..144,100;1,8..144,200;1,8..144,300;1,8..144,400;1,8..144,500;1,8..144,600;1,8..144,700;1,8..144,800&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Share+Tech+Mono&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Serif:ital,opsz,wght@0,8..144,100;0,8..144,200;0,8..144,300;0,8..144,400;0,8..144,500;0,8..144,600;0,8..144,700;0,8..144,800;0,8..144,900;1,8..144,100;1,8..144,200;1,8..144,300;1,8..144,400;1,8..144,500;1,8..144,600;1,8..144,700;1,8..144,800&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Share+Tech+Mono&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*
 ////////////////////////
@@ -64,23 +64,29 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* UNICODE */
+/*
+///////////////////////
+//// UNICODE FONTS ////
+///////////////////////
+
+Unicode fonts available for download at:
+   https://s-unicode.akamaized.net/static/fonts/u/{font-name.woff} */
 
 @font-face {
-  font-family: 'u2400';
-  src: url("../fonts/u/u2400.woff") format("woff");
+  font-family: 'u0000';
+  src: url("../fonts/u/u0000.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'u2800';
-  src: url("../fonts/u/u2800.woff") format("woff");
+  font-family: 'u0c00';
+  src: url("../fonts/u/u0c00.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'u12000';
-  src: url("../fonts/u/u12000.woff") format("woff");
+  font-family: 'u1c00';
+  src: url("../fonts/u/u1c00.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -96,12 +102,304 @@
   font-weight: normal;
   font-style: normal;
 }
-
-.u2400 {
-  font-family: u2400;
+@font-face {
+  font-family: 'u10c00';
+  src: url("../fonts/u/u10c00.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-.u2800 {
-  font-family: u2800;
+@font-face {
+  font-family: 'u0400';
+  src: url("../fonts/u/u0400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u0800';
+  src: url("../fonts/u/u0800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u1000';
+  src: url("../fonts/u/u1000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u1400';
+  src: url("../fonts/u/u1400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u1800';
+  src: url("../fonts/u/u1800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u2000';
+  src: url("../fonts/u/u2000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u2400';
+  src: url("../fonts/u/u2400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u2800';
+  src: url("../fonts/u/u2800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u3000';
+  src: url("../fonts/u/u3000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u3400';
+  src: url("../fonts/u/u3400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u4000';
+  src: url("../fonts/u/u4000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u4400';
+  src: url("../fonts/u/u4400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u4800';
+  src: url("../fonts/u/u4800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u5000';
+  src: url("../fonts/u/u5000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u5800';
+  src: url("../fonts/u/u5800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u6000';
+  src: url("../fonts/u/u6000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u6400';
+  src: url("../fonts/u/u6400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u6800';
+  src: url("../fonts/u/u6800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u7000';
+  src: url("../fonts/u/u7000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u7400';
+  src: url("../fonts/u/u7400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u7800';
+  src: url("../fonts/u/u7800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u8000';
+  src: url("../fonts/u/u8000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u8400';
+  src: url("../fonts/u/u8400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u8800';
+  src: url("../fonts/u/u8800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u9000';
+  src: url("../fonts/u/u9000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u9400';
+  src: url("../fonts/u/u9400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u9800';
+  src: url("../fonts/u/u9800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u10000';
+  src: url("../fonts/u/u10000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u10400';
+  src: url("../fonts/u/u10400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u10800';
+  src: url("../fonts/u/u10800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u11000';
+  src: url("../fonts/u/u11000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u11400';
+  src: url("../fonts/u/u11400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u11800';
+  src: url("../fonts/u/u11800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u12000';
+  src: url("../fonts/u/u12000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u12400';
+  src: url("../fonts/u/u12400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u12800';
+  src: url("../fonts/u/u12800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u13000';
+  src: url("../fonts/u/u13000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u13400';
+  src: url("../fonts/u/u13400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u13800';
+  src: url("../fonts/u/u13800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u14000';
+  src: url("../fonts/u/u14000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u14400';
+  src: url("../fonts/u/u14400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u14800';
+  src: url("../fonts/u/u14800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'u15000';
+  src: url("../fonts/u/u15000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ua000';
+  src: url("../fonts/u/ua000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ua400';
+  src: url("../fonts/u/ua400.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ua800';
+  src: url("../fonts/u/ua800.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ub000';
+  src: url("../fonts/u/ub000.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.u0000 {
+  font-family: u0000;
+}
+.u0c00 {
+  font-family: u0c00;
+}
+.u1c00 {
+  font-family: u1c00;
 }
 .u1f000 {
   font-family: u1f000;
@@ -109,6 +407,150 @@
 .u1f400 {
   font-family: u1f400;
 }
+.u10c00 {
+  font-family: u10c00;
+}
+.u0400 {
+  font-family: u0400;
+}
+.u0800 {
+  font-family: u0800;
+}
+.u1000 {
+  font-family: u1000;
+}
+.u1400 {
+  font-family: u1400;
+}
+.u1800 {
+  font-family: u1800;
+}
+.u2000 {
+  font-family: u2000;
+}
+.u2400 {
+  font-family: u2400;
+}
+.u2800 {
+  font-family: u2800;
+}
+.u3000 {
+  font-family: u3000;
+}
+.u3400 {
+  font-family: u3400;
+}
+.u3800 {
+  font-family: u3800;
+}
+.u4000 {
+  font-family: u4000;
+}
+.u4400 {
+  font-family: u4400;
+}
+.u4800 {
+  font-family: u4800;
+}
+.u5000 {
+  font-family: u5000;
+}
+.u5800 {
+  font-family: u5800;
+}
+.u6000 {
+  font-family: u6000;
+}
+.u6400 {
+  font-family: u6400;
+}
+.u6800 {
+  font-family: u6800;
+}
+.u7000 {
+  font-family: u7000;
+}
+.u7400 {
+  font-family: u7400;
+}
+.u7800 {
+  font-family: u7800;
+}
+.u8000 {
+  font-family: u8000;
+}
+.u8400 {
+  font-family: u8400;
+}
+.u8800 {
+  font-family: u8800;
+}
+.u9000 {
+  font-family: u9000;
+}
+.u9400 {
+  font-family: u9400;
+}
+.u9800 {
+  font-family: u9800;
+}
+.u10000 {
+  font-family: u10000;
+}
+.u10400 {
+  font-family: u10400;
+}
+.u10800 {
+  font-family: u10800;
+}
+.u11000 {
+  font-family: u11000;
+}
+.u11400 {
+  font-family: u11400;
+}
+.u11800 {
+  font-family: u11800;
+}
 .u12000 {
   font-family: u12000;
+}
+.u12400 {
+  font-family: u12400;
+}
+.u12800 {
+  font-family: u12800;
+}
+.u13000 {
+  font-family: u13000;
+}
+.u13400 {
+  font-family: u13400;
+}
+.u13800 {
+  font-family: u13800;
+}
+.u14000 {
+  font-family: u14000;
+}
+.u14400 {
+  font-family: u14400;
+}
+.u14800 {
+  font-family: u14800;
+}
+.u15000 {
+  font-family: u15000;
+}
+.ua000 {
+  font-family: ua000;
+}
+.ua400 {
+  font-family: ua400;
+}
+.ua800 {
+  font-family: ua800;
+}
+.ub000 {
+  font-family: ub000;
 }

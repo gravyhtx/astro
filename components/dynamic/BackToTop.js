@@ -2,7 +2,7 @@ import { scrollToTop, handleScrollClasses, getScrollPosition } from "../../utils
 
 const BackToTop = () => {
   handleScrollClasses("back-to-top",["show-on","show-off"])
-  console.log(getScrollPosition())
+  // console.log(getScrollPosition());
   return (
     <div onClick={scrollToTop} className="back-to-top disable-highlight show-off" id="back-to-top">
         BACK TO TOP

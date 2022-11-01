@@ -1,4 +1,4 @@
-import TextContainer from "../components/TextContainer";
+import TextContainer from "../components/containers/TextContainer";
 
 export const deckSettings = (user, deckOptions, handleDeckOptions, handleDeckKeys) =>{
   return (<>

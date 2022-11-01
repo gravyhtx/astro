@@ -7,8 +7,7 @@ export const alchemy = (name, usefont) => {
   //  or
   // {char: '\u{2BD9}', set: 'u2800'};
 
-  // unicode fonts available at:
-  // https://s-unicode.akamaized.net/static/fonts/u/{font-name.woff}
+  // More information in '/fonts' and '/styles/fonts.css'
   
   usefont = usefont === false ? false : true;
 

@@ -13,6 +13,7 @@ export const checkTypeof = (variable, type) => {
       || type === "multi_array" || type === "multiple_arrays" || type === "multiplearrays")
       && Array.isArray(variable) && variable.length && variable[0].length ?
       output = {is: true, type: "arrays"}
+
     : type && type === "array" && Array.isArray(variable) ?
       output = {is: true, type: "array"}
 
@@ -109,7 +110,7 @@ export const checkType = (variable, type) => {
   if(type === 'multiarr' || type === 'arrs') {
     type = 'arrays'
   }
-  if(type === 'int') {
+  if(type === 'big') {
     type = 'bigint'
   }
   if(type === 'f' || type === 'fun' || type === 'func') {
@@ -119,7 +120,7 @@ export const checkType = (variable, type) => {
     type = 'boolean'
   }
   if(type === 'n' || type === 'num') {
-    type = 'boolean'
+    type = 'number'
   }
   if(type === 'sym') {
     type = 'symbol'
@@ -138,12 +139,13 @@ export const checkType = (variable, type) => {
     ? checkTypeof(variable, type).is
   : type === false && variable !== false
     ? checkTypeof(variable)
-  : type === false && variable === false
-    ? null
-    : null;
+  : !type && !variable
+    ? undefined
+    : undefined;
 }
 
 // VALIDATE EMAIL ADDRESSES
+// API -- https://apilayer.com/marketplace/email_verification-api
 export const validateEmail = (email) => {
   const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const successMessage = "Email is valid."
@@ -166,15 +168,19 @@ export const validateEmail = (email) => {
 // VALIDATE PASSWORDS
 export const validatePassword = (password, reEnterPassword, passwordMatch, complexPassword, specialCharacters,
   min, max, consecutiveLimit) => {
+  
+  // Ensure password is a string
+  password = password.toString();
 
-  // Determine if user must re-enter passwords. Defaults to 'false'.
-  passwordMatch = passwordMatch === true ? true : false;
+  // Determine if user must re-enter passwords. Defaults to 'false'. May enter 'false'
+  // in 'reEnterPassword' and/or 'passwordMatch'
+  passwordMatch = passwordMatch === false || reEnterPassword === false ? false : true;
   // Determine if it must be a complex password. Defaults 'false'.
-  complexPassword = complexPassword === true ? complexPassword : false;
+  complexPassword = complexPassword === false ? false : true;
 
   // MIN & MAX DO NOT WORK RIGHT NOW
-  min = min ? min : 6;
-  max = max ? max : 20;
+  min = checkType(min, 'number') ? min : min === false ? 1 : 6;
+  max = checkType(max, 'number') ? max : max === false ? 200 : 20;
 
   consecutiveLimit = checkType(Number(consecutiveLimit), 'number') && Number(consecutiveLimit) > 1 ?
     Number(consecutiveLimit) : 2;
@@ -192,7 +198,7 @@ export const validatePassword = (password, reEnterPassword, passwordMatch, compl
 
   // let pwStrength = useRef(0);
 
-  if (passwordMatch === true && password !== reEnterPassword) {
+  if (passwordMatch === true && password.toString() !== reEnterPassword.toString()) {
     errors.push("Password fields do not match.");
   }
 
@@ -231,7 +237,7 @@ export const validatePassword = (password, reEnterPassword, passwordMatch, compl
   if (errors.length) {
     return { is: false, pw: undefined, msg: errors }
   } else {
-    return { is: true, pw: password, msg: successMessage }
+    return { is: true, pw: password.toString(), msg: successMessage }
   }
 }
 
@@ -241,13 +247,14 @@ export const passwordsMatch = (password, reEnterPassword) => {
   const successMessage = "Password fields match.";
 
   if (password !== reEnterPassword) {
-    return { is: false, pw: password, msg: errorMessage }
+    return { is: false, pw: password.toString(), msg: errorMessage }
   } else {
-    return { is: true, pw: password, msg: successMessage }
+    return { is: true, pw: password.toString(), msg: successMessage }
   }
 }
 
-
+// CHECK FOR VAIL PHONE NUMBER
+// API -- https://apilayer.com/marketplace/number_verification-api
 export const validPhoneNumber = (phoneNumber) => {
   const regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
   return regex.test(phoneNumber);

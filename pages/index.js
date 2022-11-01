@@ -9,28 +9,25 @@ import styles from '../styles/astro-app.module.css';
 import SideNav from '../components/nav/SideNav';
 import Modal from '../components/dynamic/Modal';
 import Popup from '../components/dynamic/Popup';
-import ImageMap from '../components/dynamic/ImageMap';
+import { ImageMap } from '../components/dynamic/ImageMap';
 import PageBreak from '../components/layout/PageBreak';
 import { SvgContainer } from '../components/containers/SvgContainer';
 
-import Glider from '../components/carousesl/Glider';
-import GliderPanel from '../components/carousesl/GliderPanel';
+import Glider from '../components/carousel/Glider';
+import GliderPanel from '../components/carousel/GliderPanel';
 import AudioComponent from '../components/audio/AudioComponent';
 
 import { handleKeyDownIncDec, handleInput } from '../modules/handleInputs';
 import { createNewDeck, shuffleUserDeck, tarotDetails } from '../modules/tarot';
 import { deckSettings } from '../modules/settings';
-// import Code from '../components/containers/CodeBlock/CodeBlock.js'
-import { unicodeToChar } from '../utils/generator';
 
 import logo from '../public/gravy_logo.svg';
-import { getFetch, getTimeCalc } from '../utils/siteFunctions';
 import { alchemy } from '../modules/alchemy';
 import CardSpread from '../components/containers/Cards/CardSpread';
 import Card from '../components/containers/Cards/Card';
-import { hash } from '../utils/hashSystem';
 import { GradientBox } from '../components/colorize/Gradients';
 import { checkType, checkTypeof, consecutiveChars, fileName, validatePassword, validPhoneNumber } from '../utils/validation';
+import { imageExists } from '../utils/siteFunctions';
 
 
 export default function AstroApp() {
@@ -39,7 +36,6 @@ export default function AstroApp() {
   const [appReady, setAppReady] = useState(false);
   const [shuffled, setShuffled] = useState();
 
-  
 // TAROT STATE
   const [cardDataArr, setCardDataArr] = useState([]);
   const [cardSelect, setCardSelect] = useState([]);
@@ -59,7 +55,7 @@ export default function AstroApp() {
     // Call initialization functions and check for errors
     const load = () => {
       try {
-        setHorroscope({ ...horroscope, getHorroscope });
+        setHoroscope({ ...horoscope, getHoroscope });
         setNewDeck(createNewDeck);
         setUserDeck(!user.startFresh && user.deckState.length ? user.deckState : newDeck);
         setShuffled(false);
@@ -74,11 +70,10 @@ export default function AstroApp() {
     // Once app is loaded set ready status to true
     setAppReady(true);
   }, [appReady]);
-  
 
 // GET ASTROLOGY APP DATA
   // https://github.com/sameerkumar18/aztro
-  const [horroscope, setHorroscope] = useState({});
+  const [horoscope, setHoroscope] = useState({});
 
   // Set API data for user & store new user data
   const astroUser = {
@@ -110,8 +105,7 @@ export default function AstroApp() {
     .then((res) => res.data)
     .catch((error) => error);
   
-  const getHorroscope = data ? data : error;
-
+  const getHoroscope = data ? data : error;
 
 // NEW APP
   // Set Tarot state
@@ -131,8 +125,8 @@ export default function AstroApp() {
   const startApp = () => {
     setCardDataArr([]);
   // GET ASTROLOGY DATA
-    setHorroscope({ ...horroscope, getHorroscope });
-    console.log(horroscope)
+    setHoroscope({ ...horoscope, getHoroscope });
+    console.log(horoscope)
   // TAROT
     shuffleUserDeck(userDeck, setUserDeck, user, setUser, deckOptions);
   // GO!
@@ -171,11 +165,6 @@ export default function AstroApp() {
   }
 
   const settings = deckSettings(user, deckOptions, handleDeckOptions, handleDeckKeys);
-  // const card = {value: 'The World', suit: false, arcana: 'major', num: 21, faceUp: true}
-  const card = {value: '9', suit: 'Cups', suitNum: 1, arcana: 'minor', num: 8, reversed: true}
-  // console.log(tarotDetails(card));
-  // console.log(getTimeCalc(14,30, false))
-
 
   const TarotModal = () => {
     const tName = currentData ? (currentData.name + (currentData.suit ? " "+currentData.suit : "")) : "";
@@ -263,38 +252,20 @@ export default function AstroApp() {
   const colors02 = ['rgb(244 182 128 / 80%)','rgba(250.014,192.156,195.145,0) 80%'];
   const colors03 = ['rgb(159 126 240 / 80%)','rgba(195.145,250.014,192.156,0) 80%'];
 
-  const consec = 'a3aSsa!'
-  console.log(validatePassword(consec,consec,true,true,true))
+  const consec = 'asDs21a!'
+  // console.log(validatePassword(consec,false))
   // const consec = '1akss2h777s0llll'
   // console.log(consecutiveChars(consec))
   const str = 'aabb0cAcBB22cdde';
 
   // const consecutive = (string, limit) => {
   //   limit = limit && limit > 0 ? limit : 2;
-  //   const pattern = /([a-zA-Z0-9])\1+/g;
-  //   const matches = string.match(pattern);
-  //   for(let i = 0; i < matches.length; i++) {
-  //     let split = matches[i].split('');
-  //     if(split.length && split.length > limit) {
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // }
-  // console.log(consecutive(str))
-
-  // const cards = cardDataArr.length >= 5 ? [
-  //   <Card>{cardDataArr[0].value}{cardDataArr[0].suit ? " of "+cardDataArr[0].suit : ""}</Card>,
-  //   <Card>{cardDataArr[1].value}{cardDataArr[1].suit ? " of "+cardDataArr[1].suit : ""}</Card>,
-  //   <Card>{cardDataArr[2].value}{cardDataArr[2].suit ? " of "+cardDataArr[2].suit : ""}</Card>,
-  //   <Card>{cardDataArr[3].value}{cardDataArr[3].suit ? " of "+cardDataArr[3].suit : ""}</Card>,
-  //   <Card>{cardDataArr[4].value}{cardDataArr[4].suit ? " of "+cardDataArr[4].suit : ""}</Card> ] : [];
 
   return (<>
-    <DefaultLayout swipeNav={false}>
-      <div className="gravy-home focus-in-contract">
+    <DefaultLayout swipeNav={false} backToTop={true}>
+      {/* <div className="gravy-home focus-in-contract">
         <SvgContainer svg={logo} sizeObj={false} />
-      </div>
+      </div> */}
       <br/>
       <SideNav header={<SvgContainer svg={logo} sizeObj={false} />} activate={sideNav} setActivate={setSideNav} />
       <div className={styles.container}>
@@ -304,10 +275,10 @@ export default function AstroApp() {
         <h2>START APP</h2>
         <button onClick={() => startApp()}>CLICK ME</button>
       </div>
-      <PageBreak border={true}>
+      {/* <PageBreak border={true}>
         This is my childrens
         {ohmanda.data}
-      </PageBreak>
+      </PageBreak> */}
 
       {/* TAROT */}
       <div className="tarot astro-container center">
@@ -340,9 +311,9 @@ export default function AstroApp() {
           [[colors01],
            [colors02],
            [colors03]]
-        } contain={false} position={['217deg', '127deg', '336deg']} />
+        } contain={true} position={['217deg', '127deg', '336deg']} />
 
-      <Modal addSpace={true} size={'md'} blur={false} activate={modal} setActivate={setModal} id="tarot-settings">{settings}</Modal>
+      <Modal title={"SETTINGS"} addSpace={true} size={'md'} blur={false} activate={modal} setActivate={setModal} id="tarot-settings">{settings}</Modal>
       <Popup header="SUBSCRIBE" blur={false} activate={popup} setActivate={setPopup} id="popup">{settings}</Popup>
       <TarotModal />
     </DefaultLayout>

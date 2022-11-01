@@ -5,30 +5,39 @@
 
 import { SvgContainer } from "../containers/SvgContainer";
 
+export const playPauseAudio = (event, isPlaying, setIsPlaying) => {
+  const target = event.target;
+  const { trackNumber } = target.dataset;
+  // const currentAudio = audioRef.current;
+  
+  // const audioElement = new Audio(src);
+  
+  // audioRef.src = `/audio/${file}${extension}`;
+  // console.log(audioElement.current.src);
+  if(isPlaying === false){ setIsPlaying(true) };
+  if(isPlaying === true){ setIsPlaying(false) };
+
+  return(
+    <button onClick={(e) => playAudio(e)} useRef={playButton} class="play-controls" role="switch" aria-checked="false">
+      <span>{ isPlaying === true ? Pause : Play }</span>
+    </button>
+  )
+}
+
+export const pauseAudio = (event) => {
+  const target = event.target;
+  const { trackNumber } = target.dataset;
+  // const currentAudio = audioRef.current;
+  
+  // const audioElement = new Audio(src);
+  
+  // audioRef.src = `/audio/${file}${extension}`;
+  // console.log(audioElement.current.src);
+  setIsPlaying(false);
+}
+
 export const AudioControls = ({ isPlaying, setIsPlaying, trackDuration, setTrackDuration, trackIndex, setTrackIndex }) => {
 
-    const playAudio = (event) => {
-      const target = event.target;
-      const { trackNumber } = target.dataset;
-      // const currentAudio = audioRef.current;
-      
-      // const audioElement = new Audio(src);
-      
-      // audioRef.src = `/audio/${file}${extension}`;
-      // console.log(audioElement.current.src);
-      setIsPlaying(true);
-    }
-    const pauseAudio = (event) => {
-      const target = event.target;
-      const { trackNumber } = target.dataset;
-      // const currentAudio = audioRef.current;
-      
-      // const audioElement = new Audio(src);
-      
-      // audioRef.src = `/audio/${file}${extension}`;
-      // console.log(audioElement.current.src);
-      setIsPlaying(false);
-    }
 
     const nextFile = () => {
       const count = trackIndex;
@@ -89,9 +98,9 @@ export const AudioControls = ({ isPlaying, setIsPlaying, trackDuration, setTrack
     //   >
     //     <SvgContainer svg={next} sizeObj={false} />
     //   </button>
-    // </div>
-    return(<></>)
-  
+    // </div> 
 };
+
+
 
 export default AudioControls;

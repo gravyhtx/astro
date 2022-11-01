@@ -2,7 +2,7 @@ import { imageSizeObj } from "../../utils/validation";
 import website from '../../config/site-data.json'
 
 // USE OBJECT TAG TO CREATE AN INTERACTIVE IMAGE MAP
-const ImageMap = ({ img, classes, name, areaObj, sizeObj, alt, onClick }) => {
+export const ImageMap = ({ img, classes, name, areaObj, sizeObj, alt, onClick }) => {
 
   const data = img.src ? img : img.img ? { src: img.img } : { src: img };
   const dataSrc = data.src;
@@ -70,5 +70,3 @@ const ImageMap = ({ img, classes, name, areaObj, sizeObj, alt, onClick }) => {
     </map>
   </>)
 }
-
-export default ImageMap;

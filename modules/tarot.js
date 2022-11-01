@@ -70,7 +70,6 @@ export const shuffleUserDeck = (userDeck, setUserDeck, user, setUser, deckOption
 
   setUser(userData); // PREVIOUS DECK STATE.. change to 'shuffledDeck' to keep current
   console.log(user);
-  console.log(user.timesShuffled);
 }
 
 export const shuffleDeck = (userDeck, user, deckOptions) => {

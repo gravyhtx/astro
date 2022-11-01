@@ -1,4 +1,3 @@
-import { SYMBOL_PREVIEW_DATA } from "next/dist/server/api-utils";
 import { useEffect, useRef, useState } from "react";
 import { checkType } from "../../utils/validation";
 
