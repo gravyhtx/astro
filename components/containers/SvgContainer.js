@@ -1,6 +1,6 @@
 import Link from "next/link";
 import website from '../../config/site-data.json';
-import { imageSizeObj } from "../../utils/validation";
+import { imageSizeObj, checkType } from "../../utils/validation";
 
 // SVG TO IMG COMPONENT
 // Use <img> tag to show a dynamic SVG element
@@ -121,9 +121,9 @@ export const SvgActionIcon = ({ src, classes, linkClasses, onClick }) =>{
 }
 
 
-// SVG CONTAINER
+// SVG OBJECT CONTAINER
 // Container for SVGs
-export const SvgContainer = ({ svg, classes, alt, sizeObj, useFallback }) => {
+export const SvgObject = ({ svg, classes, color, styles, alt, sizeObj, margins, maxWidth, useFallback }) => {
   // https://vecta.io/blog/best-way-to-embed-svg#2-using-an--object--tag
   const data = svg.src ? svg : { src: svg };
   const dataSrc = data.src;
@@ -134,12 +134,29 @@ export const SvgContainer = ({ svg, classes, alt, sizeObj, useFallback }) => {
 
   const size = sizeObj === true ? { width: data.width, height: data.height }
     : sizeObj !== undefined && sizeObj !== true && sizeObj !== false ? imageSizeObj(sizeObj) : false;
+
+  // SVG  COLORS IN AVAILABLE ASS CSS CLASSES
+  //  Search for available classes by '.svg-color_'
+  color=checkType(color, 'string')?"svg-color-"+color:null;
+  // ADDITIONAL STYLES MAY BE USED
+  // COLOR MAY ALSO BE CHANGED USING THE 'filter' PROPERTY
+  styles=checkType(styles, 'object')?styles:{};
+
+  margins=margins?margins:"0 auto";
+
+  // IMAGE STYLES
+  const imageStyles = {
+    margin:margins,
+    maxWidth:maxWidth?maxWidth:null,
+    styles
+  }
   
+  // FALLBACK IMAGE
   const fallback = useFallback === true ? <img alt={alt} className={"svg-fallback"+classes} src={dataSrc} /> : <></>;
   
   return(<>
     {size !== false ?
-      <object className={"svg-container"+classes} width={size.width} height={size.height} type="image/svg+xml" data={dataSrc}>
+      <object style={imageStyles ? imageStyles : {}} className={"svg-container"+classes} width={size.width} height={size.height} type="image/svg+xml" data={dataSrc}>
         { fallback }
       </object>
     : <object className={"svg-container"+classes} type="image/svg+xml" data={dataSrc}>
@@ -147,4 +164,53 @@ export const SvgContainer = ({ svg, classes, alt, sizeObj, useFallback }) => {
       </object>
     }
   </>)
+}
+
+// SVG CONTAINER
+// Standard Container for SVGs
+export const SvgContainer = ({ margins, src, link, color, width, description, container, classes, id, styles, drag, maxWidth }) => {
+  let svgContainer="";
+  if(container){svgContainer=" "+container;}
+  let svgClass="";
+  if(classes){svgClass=" "+classes;}
+  let svgId="";
+  if(id){svgId=" "+id;}
+
+  // SVG  COLORS IN AVAILABLE ASS CSS CLASSES
+  //  Search for available classes by '.svg-color_'
+  color=checkType(color, 'string')?" svg-color-"+color:'';
+  // ADDITIONAL STYLES MAY BE USED
+  // COLOR MAY ALSO BE CHANGED USING THE 'filter' PROPERTY
+  styles=checkType(styles, 'object')?styles:{};
+
+  margins=margins?margins:"0 auto"
+
+  // IMAGE STYLES
+  const svgStyles = {
+    margin:margins,
+    width:width?width:null,
+    maxWidth:maxWidth?maxWidth:null,
+    ...styles
+  }
+
+  let path;
+
+  if(src && src.src){ path = src.src }
+  else { path = src }
+
+  return (
+    <Link href={link?link:'/'} target="_blank" rel="noreferrer">
+    <a target="_blank" rel="noreferrer">
+    <div className={"svg-container"+svgContainer}>
+      <img
+        style={svgStyles ? svgStyles : {}}
+        src={src ? path : ""}
+        className={"svg-img"+svgClass+color}
+        id={svgId ? "svg-img_"+svgId : ""}
+        draggable={drag ? drag : false}
+        alt={description} />
+    </div>
+    </a>
+    </Link>
+  )
 }

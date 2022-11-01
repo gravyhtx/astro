@@ -11,7 +11,7 @@ import Modal from '../components/dynamic/Modal';
 import Popup from '../components/dynamic/Popup';
 import { ImageMap } from '../components/dynamic/ImageMap';
 import PageBreak from '../components/layout/PageBreak';
-import { SvgContainer } from '../components/containers/SvgContainer';
+import { SvgObject } from '../components/containers/SvgContainer';
 
 import Glider from '../components/carousel/Glider';
 import GliderPanel from '../components/carousel/GliderPanel';
@@ -27,7 +27,7 @@ import CardSpread from '../components/containers/Cards/CardSpread';
 import Card from '../components/containers/Cards/Card';
 import { GradientBox } from '../components/colorize/Gradients';
 import { checkType, checkTypeof, consecutiveChars, fileName, validatePassword, validPhoneNumber } from '../utils/validation';
-import { imageExists } from '../utils/siteFunctions';
+import { imageExists, isMobile } from '../utils/siteFunctions';
 
 
 export default function AstroApp() {
@@ -263,11 +263,11 @@ export default function AstroApp() {
 
   return (<>
     <DefaultLayout swipeNav={false} backToTop={true}>
-      {/* <div className="gravy-home focus-in-contract">
-        <SvgContainer svg={logo} sizeObj={false} />
-      </div> */}
+      <div className="gravy-home focus-in-contract">
+        <SvgObject svg={logo} sizeObj={false} />
+      </div>
       <br/>
-      <SideNav header={<SvgContainer svg={logo} sizeObj={false} />} activate={sideNav} setActivate={setSideNav} />
+      <SideNav header={<SvgObject svg={logo} sizeObj={false} />} activate={sideNav} setActivate={setSideNav} />
       <div className={styles.container}>
         <button onClick={() => openModal()}>OPEN SETTINGS</button>
         {/* <button onClick={() => openPopup()}>OPEN POPUP</button> */}

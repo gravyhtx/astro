@@ -494,6 +494,12 @@ input.num-box:active {
   padding: 50px;
 }
 
+@media only screen and (max-width: 770px) {
+  .gravy-home {
+    display: none;
+  }
+}
+
 
 /*
 ///////////////////
